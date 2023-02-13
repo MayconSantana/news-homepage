@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    font-size: 15px;
+    padding: 5rem 8rem;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 4rem;
+}
+
+header > .menu > div > ul{
+    display: flex;
+    gap: 3rem;
+}
+
+header > .menu > div > ul > li {
+    list-style-type: none;
+    color: hsl(236, 13%, 42%);
+    cursor: pointer;
+}
+
+header > .menu > div > ul > li:hover {
+    transition: .3s all ease-in-out;
+    color: hsl(5, 85%, 63%);
+}
+
+.bars-menu {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+#checkbox-menu {
+    position: absolute;
+    opacity: 0;
+}
+
+.bars-menu > label {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    z-index: 2;
+
+    width: 2rem;
+    height: .1rem;
+}
+
+
+.bars-menu > label > span {
+    position: absolute;
+    display: block;
+
+    height: 5px;
+    width: 100%;
+
+    border-radius: 30px;
+    background: hsl(240, 100%, 5%);
+    transition: .3s ease-in-out;
+}
+
+.bars-menu > label > span:nth-child(1) {
+    top: 0;
+}
+
+.bars-menu > label > span:nth-child(2) {
+    top: 8px;
+}
+
+.bars-menu > label > span:nth-child(3) {
+    top: 16px;
+}
+
+#checkbox-menu:checked + label > span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 8px;
+}
+
+#checkbox-menu:checked + label > span:nth-child(2) {
+    display: none;
+}
+
+#checkbox-menu:checked + label > span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 8px;
+}
+
+/* Principal Content */
+
+section {
+    display: flex;
+    margin-bottom: 4rem;
+}
+
+.principal-content {
+    width: 70%;
+    margin-right: 2rem;
+}
+
+.principal-content > img {
+    width: 100%;    
+    margin: 0 0 2rem 0;
+}
+
+.principal-content-text {
+    display: flex;
+}
+
+.principal-content-text > h1 {
+    font-size: 48px;
+    margin-right: 4rem;
+    max-width: 40%;
+    font-weight: 800;
+}
+
+.second-content-text {
+    max-width: 46%;
+}
+
+.second-content-text > p {
+    line-height: 1.5rem;
+    margin-bottom: 2rem;
+    color: hsl(236, 13%, 42%);
+    text-align: left;
+}
+
+.second-content-text > button {
+    background: hsl(5, 85%, 63%);
+    color: hsl(36, 100%, 99%);
+    border: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    width: 48%;
+    height: 24%;
+
+    cursor: pointer;
+}
+
+.second-content-text > button:hover{
+    background: hsl(240, 100%, 5%);
+    transition: .3s all ease-in-out;
+}
+
+/* Aside NEWS */
+
+.news {
+    width: 31%;
+
+    color: #fff;
+    background: hsl(240, 100%, 5%);
+    padding: 2rem 1.5rem; 
+}
+
+.news > h2 {
+    color: hsl(35, 77%, 62%);
+    margin-bottom: 2rem;
+    font-size: 3rem;
+}
+
+
+
+.news > .notice {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid hsl(233, 8%, 79%);
+}
+
+.news > .notice:last-child {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+.notice > h3 {
+    color: hsl(36, 100%, 99%);
+    margin-bottom: .5rem;
+    font-size: 18px;
+}
+
+.notice > h3:hover {
+    color: hsl(35, 77%, 62%);
+    transition: .3s all ease-in-out;
+    cursor: pointer;
+}
+.notice > p {
+    color: hsl(233, 8%, 79%);
+    font-size: 14px;
+    line-height: 1.5rem;
+}
+
+/* Article */
+
+article {
+    display: flex;
+    width: 100%;
+    
+    margin-bottom: 3rem;
+}
+
+.box-article {
+    display: flex;
+    margin-right: 1rem;
+}
+
+.box-article:last-child {
+    margin: 0;
+}
+
+.box-article > img {
+    width: 6rem;
+    margin-right: 1.5rem;
+}
+
+.text-article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.text-article > span {
+    font-size: 2rem;
+    color: hsl(233, 8%, 79%);
+    margin-bottom: .5rem;
+}
+
+.text-article > h4 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.text-article > h4:hover {
+    color: hsl(5, 85%, 63%);
+    transition: .3s all ease-in-out;
+    cursor: pointer;
+}
+
+.text-article > p {
+    color: hsl(236, 13%, 42%);
+}
+
+/* Responsive Layouts */
+
+@media (max-width: 850px) {
+    body {
+        padding: 1rem;
+    }
+
+    header > .menu > div > ul { display: none; }
+
+    .bars-menu { display: flex; }
+
+    section {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .principal-content {
+        width: 100%;
+    }
+
+    .principal-content > img {
+        width: 100%;
+        height: 15rem;
+        object-fit: cover;
+    }
+
+    .principal-content-text {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .second-content-text {
+        max-width: 100%;
+    }
+
+    .principal-content-text > h1,
+    .second-content-text > p {
+        max-width: 100%;
+    }
+
+    .principal-content-text > h1 {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .second-content-text > button {
+        width: 40%;
+        height: 3rem;
+    }
+
+    .news {
+        margin-top: 3rem;
+        width: 100%;
+    }
+
+    article {
+        flex-direction: column;
+    }
+
+    .box-article {
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+
+    .box-article > img {
+        width: 5rem;
+        height: auto;
+        margin-right: 1rem;
+    }
+
+
+    .text-article > span {
+        font-size: 1.5rem;
+    }
+    
+    .text-article > h4 {
+        font-size: .9rem;
+       
+    }
+    
+    .text-article > p {
+        font-size: .7rem;
+    }
+
+}
+
+header > .menu > div.mobile {
+    display: flex;
+    z-index: 1;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    height: 100%;
+    width: 100%;
+    color: hsl(240, 100%, 5%);
+    font-size: 1.2rem;
+    background: rgba(0, 0, 0, .5);
+}
+
+header > .menu > div.mobile > ul {
+    position: fixed;
+    right: 0;
+    width: 70%;
+    height: 100%;
+    padding-top: 10rem;
+    padding-left: 2rem;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+header > .menu > .mobile > ul > li {
+    list-style-type: none;
+}
